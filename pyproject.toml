@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "gesture-capture"
 version = "0.1.0"
-description = "Gesture capture and feature extraction tool"
+description = "Gesture capture, feature extraction and classification tool"
 requires-python = ">=3.11"
 
 dependencies = [
@@ -17,6 +17,8 @@ dependencies = [
     "opencv-python",
     "mediapipe==0.10.21",
     "av==18.1.0",
+    "scikit-learn",
+    "joblib",
 ]
 
 
