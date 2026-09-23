@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "gesture": "right arm up",
+  "gesture_type": "body",
+  "label": "positive",
+  "sample_id": "4f941c2b-2471-4684-ba17-ca9f685df221",
+  "source": "original.webm",
+  "clip": {
+    "start_ms": 6270,
+    "end_ms": 8330,
+    "requested_duration_ms": 2060
+  },
+  "fps": 30.30303030302997,
+  "frame_count": 62,
+  "extracted_duration_seconds": 2.032000000000001,
+  "landmarker": "mediapipe_pose",
+  "landmark_count": 33,
+  "distance_count": 528,
+  "valid_landmark_frames": 62,
+  "missing_landmark_frames": 0,
+  "features": {
+    "landmarks": true,
+    "distances": true,
+    "velocities": true,
+    "speeds": true,
+    "accelerations": true,
+    "acceleration_magnitudes": true
+  },
+  "processing": {
+    "smoothing": false,
+    "interpolation": false,
+    "normalization": false,
+    "temporal_resampling": false
+  }
+}

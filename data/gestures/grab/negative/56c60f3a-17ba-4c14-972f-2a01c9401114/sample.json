@@ -1,0 +1,22 @@
+{
+  "id": "56c60f3a-17ba-4c14-972f-2a01c9401114",
+  "gesture_id": "grab",
+  "gesture_name": "grab",
+  "target": "hand",
+  "sample_type": "negative",
+  "video": "original.webm",
+  "trim": {
+    "start_ms": 1100,
+    "end_ms": 1730,
+    "duration_ms": 630
+  },
+  "created_at": "2026-09-23T09:14:38.530377+00:00",
+  "imported_from": {
+    "gesture_id": "swipe-left",
+    "gesture_name": "swipe left",
+    "sample_id": "4702c492-4995-4944-9897-cdef78fb0ecb",
+    "sample_type": "positive",
+    "original_created_at": "2026-09-22T15:57:49.405298+00:00",
+    "imported_at": "2026-09-23T09:14:38.530377+00:00"
+  }
+}

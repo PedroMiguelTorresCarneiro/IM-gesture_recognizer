@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "gesture-capture"
+version = "0.1.0"
+description = "Gesture capture and feature extraction tool"
+requires-python = ">=3.11"
+
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "python-multipart",
+    "numpy",
+    "opencv-python",
+    "mediapipe==0.10.21",
+    "av==18.1.0",
+]
+
+
+[project.scripts]
+gesture-capture = "backend.cli:main"
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["backend", "backend.*"]
+exclude = ["data", "data.*", "frontend", "frontend.*"]

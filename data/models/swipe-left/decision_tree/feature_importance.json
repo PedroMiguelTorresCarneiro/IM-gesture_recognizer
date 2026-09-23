@@ -1,0 +1,15 @@
+{
+    "used_feature_count": 2,
+    "used_features": [
+        {
+            "index": 813,
+            "name": "R1_acceleration_5_x_mean",
+            "importance": 0.8666666666666666
+        },
+        {
+            "index": 2047,
+            "name": "R4_velocity_3_y_mean",
+            "importance": 0.13333333333333336
+        }
+    ]
+}

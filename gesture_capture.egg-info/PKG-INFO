@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: gesture-capture
+Version: 0.1.0
+Summary: Gesture capture and feature extraction tool
+Requires-Python: >=3.11
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: python-multipart
+Requires-Dist: numpy
+Requires-Dist: opencv-python
+Requires-Dist: mediapipe==0.10.21
+Requires-Dist: av==18.1.0

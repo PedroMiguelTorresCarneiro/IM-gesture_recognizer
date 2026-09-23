@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "gesture": "grab",
+  "gesture_type": "hand",
+  "label": "negative",
+  "sample_id": "e6aba3f2-fe58-4308-99d4-1343b13ad76c",
+  "source": "original.webm",
+  "clip": {
+    "start_ms": 450,
+    "end_ms": 1180,
+    "requested_duration_ms": 730
+  },
+  "fps": 30.303030303030276,
+  "frame_count": 22,
+  "extracted_duration_seconds": 0.7009999999999998,
+  "landmarker": "mediapipe_hands",
+  "landmark_count": 21,
+  "distance_count": 210,
+  "valid_landmark_frames": 22,
+  "missing_landmark_frames": 0,
+  "features": {
+    "landmarks": true,
+    "distances": true,
+    "velocities": true,
+    "speeds": true,
+    "accelerations": true,
+    "acceleration_magnitudes": true
+  },
+  "processing": {
+    "smoothing": false,
+    "interpolation": false,
+    "normalization": false,
+    "temporal_resampling": false
+  }
+}

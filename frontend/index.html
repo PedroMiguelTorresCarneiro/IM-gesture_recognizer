@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Gesture Capture</title>
+
+    <link
+        rel="stylesheet"
+        href="/styles.css"
+    >
+
+</head>
+
+<body>
+
+<main class="container">
+
+
+    <!-- ================================================== -->
+    <!-- CREATE / OPEN GESTURE                              -->
+    <!-- ================================================== -->
+
+    <section
+        id="screen-gesture"
+        class="screen"
+    >
+
+        <h1>
+            Gesture Capture
+        </h1>
+
+        <p class="subtitle">
+            Create a new dynamic gesture.
+        </p>
+
+
+        <!-- ============================================== -->
+        <!-- CREATE NEW GESTURE                             -->
+        <!-- ============================================== -->
+
+        <div class="card">
+
+            <label
+                for="gesture-name"
+            >
+                Gesture name
+            </label>
+
+            <input
+                id="gesture-name"
+                type="text"
+                placeholder="e.g. Swipe Left"
+            >
+
+
+            <label>
+                Tracking target
+            </label>
+
+            <div class="target-selector">
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="target"
+                        value="hand"
+                        checked
+                    >
+
+                    Hand
+
+                </label>
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="target"
+                        value="body"
+                    >
+
+                    Body
+
+                </label>
+
+            </div>
+
+
+            <button
+                id="create-gesture"
+                class="primary"
+            >
+                Create Gesture
+            </button>
+
+        </div>
+
+
+        <!-- ============================================== -->
+        <!-- EXISTING GESTURES                              -->
+        <!-- ============================================== -->
+
+        <div class="existing-section">
+
+            <h2>
+                Existing Gestures
+            </h2>
+
+            <p class="subtitle">
+                Select an existing gesture to continue
+                adding positive or negative examples.
+            </p>
+
+            <div
+                id="gesture-list"
+                class="gesture-list"
+            >
+
+                <div class="empty-state">
+                    Loading gestures...
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================== -->
+    <!-- GESTURE DETAILS                                    -->
+    <!-- ================================================== -->
+
+    <section
+        id="screen-samples"
+        class="screen hidden"
+    >
+
+        <button
+            id="new-gesture"
+            class="back-button"
+        >
+            ← Gestures
+        </button>
+
+
+        <h1
+            id="current-gesture-name"
+        >
+        </h1>
+
+        <p
+            id="current-gesture-target"
+            class="subtitle"
+        >
+        </p>
+
+
+        <!-- ============================================== -->
+        <!-- SAMPLE COUNTS                                  -->
+        <!-- ============================================== -->
+
+        <div class="current-stats">
+
+            <div>
+
+                <span>
+                    Positive examples
+                </span>
+
+                <strong
+                    id="positive-count"
+                >
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Negative examples
+                </span>
+
+                <strong
+                    id="negative-count"
+                >
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- ============================================== -->
+        <!-- ADD EXAMPLES                                   -->
+        <!-- ============================================== -->
+
+        <div class="sample-actions">
+
+            <button
+                id="positive-example"
+                class="positive"
+            >
+                + Positive Example
+            </button>
+
+            <button
+                id="negative-example"
+                class="negative"
+            >
+                + Negative Example
+            </button>
+
+        </div>
+
+
+        <!-- ============================================== -->
+        <!-- MODEL TRAINING                                 -->
+        <!-- ============================================== -->
+
+        <div class="training-section">
+
+            <div class="training-header">
+
+                <div>
+
+                    <h2>
+                        Model Training
+                    </h2>
+
+                    <p class="subtitle">
+                        Train a binary classifier using the
+                        positive and negative examples of this gesture.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================================== -->
+            <!-- TRAINING CONFIGURATION                     -->
+            <!-- ========================================== -->
+
+            <div class="training-config">
+
+                <div class="training-config-item">
+
+                    <span>
+                        Classifier
+                    </span>
+
+                    <strong>
+                        Decision Tree
+                    </strong>
+
+                </div>
+
+
+                <div class="training-config-item">
+
+                    <span>
+                        Representation
+                    </span>
+
+                    <strong>
+                        Temporal Pyramid <br> [1 + 2 + 4]
+                    </strong>
+
+                </div>
+
+
+                <div class="training-config-item">
+
+                    <span>
+                        Regions
+                    </span>
+
+                    <strong>
+                        7
+                    </strong>
+
+                </div>
+
+
+                <div class="training-config-item">
+
+                    <span>
+                        Aggregation
+                    </span>
+
+                    <strong>
+                        Mean
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================================== -->
+            <!-- TRAIN BUTTON                               -->
+            <!-- ========================================== -->
+
+            <div class="training-actions">
+
+                <button
+                    id="train-model"
+                    class="primary"
+                >
+                    Train Decision Tree
+                </button>
+
+                <span
+                    id="training-status"
+                    class="training-status"
+                >
+                </span>
+
+            </div>
+
+
+            <!-- ========================================== -->
+            <!-- TRAINING RESULTS                           -->
+            <!-- ========================================== -->
+
+            <div
+                id="training-results"
+                class="training-results hidden"
+            >
+
+
+                <!-- ====================================== -->
+                <!-- SUMMARY                                -->
+                <!-- ====================================== -->
+
+                <h3>
+                    Training Summary
+                </h3>
+
+                <div class="training-summary">
+
+                    <div>
+
+                        <span>
+                            Samples
+                        </span>
+
+                        <strong
+                            id="training-sample-count"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Positive
+                        </span>
+
+                        <strong
+                            id="training-positive-count"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Negative
+                        </span>
+
+                        <strong
+                            id="training-negative-count"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Input Features
+                        </span>
+
+                        <strong
+                            id="training-feature-count"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Tree Depth
+                        </span>
+
+                        <strong
+                            id="training-tree-depth"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Leaf Nodes
+                        </span>
+
+                        <strong
+                            id="training-leaf-count"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Features Used
+                        </span>
+
+                        <strong
+                            id="training-used-feature-count"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Validation Accuracy
+                        </span>
+
+                        <strong
+                            id="training-accuracy"
+                        >
+                            -
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ====================================== -->
+                <!-- TRAINING WARNING                       -->
+                <!-- ====================================== -->
+
+                <div
+                    id="training-warning"
+                    class="training-warning"
+                >
+                </div>
+
+
+                <!-- ====================================== -->
+                <!-- DECISION RULES                         -->
+                <!-- ====================================== -->
+
+                <div class="training-result-block">
+
+                    <h3>
+                        Learned Decision Rules
+                    </h3>
+
+                    <p class="subtitle">
+                        Rules learned automatically by the
+                        Decision Tree from the training samples.
+                    </p>
+
+                    <pre
+                        id="training-decision-rules"
+                        class="decision-rules"
+                    ></pre>
+
+                </div>
+
+
+                <!-- ====================================== -->
+                <!-- USED FEATURES                          -->
+                <!-- ====================================== -->
+
+                <div class="training-result-block">
+
+                    <h3>
+                        Features Used by the Tree
+                    </h3>
+
+                    <div class="table-wrapper">
+
+                        <table class="training-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Feature
+                                    </th>
+
+                                    <th>
+                                        Importance
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody
+                                id="training-features-body"
+                            >
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ===================================================== -->
+                <!-- DATASET SPLIT -->
+                <!-- ===================================================== -->
+
+                <div class="training-result-block">
+
+                    <h4>
+                        Dataset Split
+                    </h4>
+
+                    <div class="training-summary">
+
+                        <div class="training-summary-item">
+                            <span class="label">
+                                Total Samples
+                            </span>
+
+                            <strong
+                                id="training-total-samples"
+                            >
+                                —
+                            </strong>
+                        </div>
+
+
+                        <div class="training-summary-item">
+                            <span class="label">
+                                Training Samples
+                            </span>
+
+                            <strong
+                                id="training-train-samples"
+                            >
+                                —
+                            </strong>
+                        </div>
+
+
+                        <div class="training-summary-item">
+                            <span class="label">
+                                Validation Samples
+                            </span>
+
+                            <strong
+                                id="training-validation-samples"
+                            >
+                                —
+                            </strong>
+                        </div>
+
+
+                        <div class="training-summary-item">
+                            <span class="label">
+                                Training Positive
+                            </span>
+
+                            <strong
+                                id="training-train-positive"
+                            >
+                                —
+                            </strong>
+                        </div>
+
+
+                        <div class="training-summary-item">
+                            <span class="label">
+                                Training Negative
+                            </span>
+
+                            <strong
+                                id="training-train-negative"
+                            >
+                                —
+                            </strong>
+                        </div>
+
+
+                        <div class="training-summary-item">
+                            <span class="label">
+                                Validation Positive
+                            </span>
+
+                            <strong
+                                id="training-validation-positive"
+                            >
+                                —
+                            </strong>
+                        </div>
+
+
+                        <div class="training-summary-item">
+                            <span class="label">
+                                Validation Negative
+                            </span>
+
+                            <strong
+                                id="training-validation-negative"
+                            >
+                                —
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ===================================================== -->
+                <!-- VALIDATION METRICS -->
+                <!-- ===================================================== -->
+
+                <div class="training-result-block">
+
+                    <h4>
+                        Validation Metrics
+                    </h4>
+
+                    <div class="training-summary">
+
+                        <div class="training-summary-item">
+                            <span class="label">
+                                Accuracy
+                            </span>
+
+                            <strong
+                                id="training-validation-accuracy"
+                            >
+                                —
+                            </strong>
+                        </div>
+
+
+                        <div class="training-summary-item">
+                            <span class="label">
+                                Precision
+                            </span>
+
+                            <strong
+                                id="training-validation-precision"
+                            >
+                                —
+                            </strong>
+                        </div>
+
+
+                        <div class="training-summary-item">
+                            <span class="label">
+                                Recall
+                            </span>
+
+                            <strong
+                                id="training-validation-recall"
+                            >
+                                —
+                            </strong>
+                        </div>
+
+
+                        <div class="training-summary-item">
+                            <span class="label">
+                                F1 Score
+                            </span>
+
+                            <strong
+                                id="training-validation-f1"
+                            >
+                                —
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ===================================================== -->
+                <!-- CONFUSION MATRIX -->
+                <!-- ===================================================== -->
+
+                <div class="training-result-block">
+
+                    <h4>
+                        Confusion Matrix
+                    </h4>
+
+                    <div class="confusion-matrix">
+
+                        <div class="confusion-matrix-empty">
+                        </div>
+
+                        <div class="confusion-matrix-header">
+                            Predicted Negative
+                        </div>
+
+                        <div class="confusion-matrix-header">
+                            Predicted Positive
+                        </div>
+
+
+                        <div class="confusion-matrix-header">
+                            Actual Negative
+                        </div>
+
+                        <div class="confusion-matrix-cell">
+                            <span>
+                                TN
+                            </span>
+
+                            <strong
+                                id="training-cm-tn"
+                            >
+                                —
+                            </strong>
+                        </div>
+
+                        <div class="confusion-matrix-cell">
+                            <span>
+                                FP
+                            </span>
+
+                            <strong
+                                id="training-cm-fp"
+                            >
+                                —
+                            </strong>
+                        </div>
+
+
+                        <div class="confusion-matrix-header">
+                            Actual Positive
+                        </div>
+
+                        <div class="confusion-matrix-cell">
+                            <span>
+                                FN
+                            </span>
+
+                            <strong
+                                id="training-cm-fn"
+                            >
+                                —
+                            </strong>
+                        </div>
+
+                        <div class="confusion-matrix-cell">
+                            <span>
+                                TP
+                            </span>
+
+                            <strong
+                                id="training-cm-tp"
+                            >
+                                —
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ===================================================== -->
+                <!-- VALIDATION SAMPLE PREDICTIONS -->
+                <!-- ===================================================== -->
+
+                <div class="training-result-block">
+
+                    <h4>
+                        Validation Sample Predictions
+                    </h4>
+
+                    <div class="table-wrapper">
+
+                        <table class="training-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Sample
+                                    </th>
+
+                                    <th>
+                                        Actual
+                                    </th>
+
+                                    <th>
+                                        Predicted
+                                    </th>
+
+                                    <th>
+                                        Confidence
+                                    </th>
+
+                                    <th>
+                                        Result
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody
+                                id="training-validation-samples-body"
+                            >
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================== -->
+    <!-- CAPTURE                                            -->
+    <!-- ================================================== -->
+
+    <section
+        id="screen-capture"
+        class="screen hidden"
+    >
+
+        <button
+            id="cancel-capture"
+            class="back-button"
+        >
+            ← Back
+        </button>
+
+
+        <h1>
+            Capture Example
+        </h1>
+
+        <p
+            id="capture-type"
+            class="subtitle"
+        >
+        </p>
+
+
+        <div class="video-container">
+
+            <video
+                id="camera-preview"
+                autoplay
+                muted
+                playsinline
+            >
+            </video>
+
+        </div>
+
+
+        <div class="capture-controls">
+
+            <button
+                id="start-recording"
+                class="primary"
+            >
+                ● Record
+            </button>
+
+            <button
+                id="stop-recording"
+                class="danger hidden"
+            >
+                ■ Stop
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================== -->
+    <!-- REVIEW / TRIM                                      -->
+    <!-- ================================================== -->
+
+    <section
+        id="screen-trim"
+        class="screen hidden"
+    >
+
+        <h1>
+            Review & Trim
+        </h1>
+
+        <p class="subtitle">
+            Select only the part of the recording
+            that contains the relevant gesture.
+        </p>
+
+
+        <div class="video-container">
+
+            <video
+                id="review-video"
+                controls
+                playsinline
+            >
+            </video>
+
+        </div>
+
+
+        <div class="trim-panel">
+
+
+            <!-- ========================================== -->
+            <!-- START                                     -->
+            <!-- ========================================== -->
+
+            <div class="trim-value">
+
+                <strong>
+                    Start
+                </strong>
+
+                <span
+                    id="trim-start-label"
+                >
+                    0.00 s
+                </span>
+
+            </div>
+
+            <input
+                id="trim-start"
+                type="range"
+                min="0"
+                max="0"
+                step="0.01"
+                value="0"
+            >
+
+
+            <!-- ========================================== -->
+            <!-- END                                       -->
+            <!-- ========================================== -->
+
+            <div class="trim-value">
+
+                <strong>
+                    End
+                </strong>
+
+                <span
+                    id="trim-end-label"
+                >
+                    0.00 s
+                </span>
+
+            </div>
+
+            <input
+                id="trim-end"
+                type="range"
+                min="0"
+                max="0"
+                step="0.01"
+                value="0"
+            >
+
+
+            <!-- ========================================== -->
+            <!-- SET USING CURRENT VIDEO POSITION           -->
+            <!-- ========================================== -->
+
+            <div class="trim-buttons">
+
+                <button
+                    id="set-start"
+                >
+                    Set Start at Current Frame
+                </button>
+
+                <button
+                    id="set-end"
+                >
+                    Set End at Current Frame
+                </button>
+
+            </div>
+
+
+            <!-- ========================================== -->
+            <!-- PLAY SELECTION                            -->
+            <!-- ========================================== -->
+
+            <button
+                id="play-selection"
+            >
+                ▶ Play Selection
+            </button>
+
+
+            <!-- ========================================== -->
+            <!-- CURRENT SELECTION INFO                    -->
+            <!-- ========================================== -->
+
+            <div
+                id="selection-info"
+                class="selection-info"
+            >
+                Selected: 0.00 s → 0.00 s
+            </div>
+
+        </div>
+
+
+        <!-- ============================================== -->
+        <!-- FINAL ACTIONS                                  -->
+        <!-- ============================================== -->
+
+        <div class="final-actions">
+
+            <button
+                id="retake"
+            >
+                Retake
+            </button>
+
+            <button
+                id="confirm-clip"
+                class="primary"
+            >
+                Confirm Clip
+            </button>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<script
+    type="module"
+    src="/app.js"
+>
+</script>
+
+</body>
+
+</html>

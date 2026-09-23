@@ -1,0 +1,14 @@
+{
+  "id": "4479c492-51aa-4f0c-8f81-b3a108cf4d2e",
+  "gesture_id": "swipe-left",
+  "gesture_name": "swipe left",
+  "target": "hand",
+  "sample_type": "positive",
+  "video": "original.webm",
+  "trim": {
+    "start_ms": 0,
+    "end_ms": 1330,
+    "duration_ms": 1330
+  },
+  "created_at": "2026-09-22T17:32:05.734686+00:00"
+}

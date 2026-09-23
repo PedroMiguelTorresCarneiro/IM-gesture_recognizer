@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "gesture": "swipe left",
+  "gesture_type": "hand",
+  "label": "negative",
+  "sample_id": "b594b3ea-91e2-4c8e-91f6-a06b2f131fd9",
+  "source": "original.webm",
+  "clip": {
+    "start_ms": 0,
+    "end_ms": 1260,
+    "requested_duration_ms": 1260
+  },
+  "fps": 30.303030303030276,
+  "frame_count": 38,
+  "extracted_duration_seconds": 1.232,
+  "landmarker": "mediapipe_hands",
+  "landmark_count": 21,
+  "distance_count": 210,
+  "valid_landmark_frames": 38,
+  "missing_landmark_frames": 0,
+  "features": {
+    "landmarks": true,
+    "distances": true,
+    "velocities": true,
+    "speeds": true,
+    "accelerations": true,
+    "acceleration_magnitudes": true
+  },
+  "processing": {
+    "smoothing": false,
+    "interpolation": false,
+    "normalization": false,
+    "temporal_resampling": false
+  }
+}

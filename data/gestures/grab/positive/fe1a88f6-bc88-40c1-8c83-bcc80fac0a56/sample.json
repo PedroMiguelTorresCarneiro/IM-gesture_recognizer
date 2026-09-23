@@ -1,0 +1,14 @@
+{
+  "id": "fe1a88f6-bc88-40c1-8c83-bcc80fac0a56",
+  "gesture_id": "grab",
+  "gesture_name": "grab",
+  "target": "hand",
+  "sample_type": "positive",
+  "video": "original.webm",
+  "trim": {
+    "start_ms": 310,
+    "end_ms": 1000,
+    "duration_ms": 690
+  },
+  "created_at": "2026-09-22T17:41:42.179538+00:00"
+}

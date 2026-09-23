@@ -1,0 +1,139 @@
+{
+    "schema_version": "1.0",
+    "trained_at": "2026-09-23T09:14:44.434480+00:00",
+    "gesture": {
+        "id": "grab",
+        "name": "grab",
+        "target": "hand"
+    },
+    "model": {
+        "name": "decision_tree",
+        "tree_depth": 1,
+        "leaf_count": 2
+    },
+    "representation": {
+        "name": "temporal_pyramid",
+        "type": "temporal_pyramid",
+        "levels": [
+            1,
+            2,
+            4
+        ],
+        "regions": 7,
+        "aggregation": "mean"
+    },
+    "input": {
+        "feature_count": 3087,
+        "dtype": "float32"
+    },
+    "labels": {
+        "0": "negative",
+        "1": "positive"
+    },
+    "dataset": {
+        "samples": 26,
+        "positive": 12,
+        "negative": 14,
+        "sample_ids": [
+            "3cfce45d-429d-466b-9f72-34c7b8363109",
+            "48146d0a-18d4-42cf-b4f3-00df3613a0d3",
+            "564f4c39-e733-4bb1-b8c9-8033b5cc0035",
+            "627222ac-44cd-44ba-96e1-127330e51e92",
+            "65c7c63d-5565-4870-87e5-f59a4e193f0c",
+            "6940c499-b260-4bd3-a853-82296852c995",
+            "7c7f780d-f9c6-4d47-a687-aef0f6e3dceb",
+            "ad55b9bc-66b5-4dae-8222-0719c330791c",
+            "b11fb1f4-19b8-494b-bbc3-78cc05b472da",
+            "d701696a-7b7e-4f10-95d8-42d57fa5023a",
+            "e53cbdd4-9762-4b3b-93e1-34b373123560",
+            "fe1a88f6-bc88-40c1-8c83-bcc80fac0a56",
+            "233cb9ec-5524-49aa-9850-7ff96c719a34",
+            "2feda1e3-0156-436a-a767-59fa87adc432",
+            "322ccc9c-fa50-4714-823d-3c13a835e11e",
+            "437603d5-aa81-4216-b777-86287b61e79d",
+            "4a60e130-dd74-44d8-b2f7-9250f610593e",
+            "53e75657-e0b5-4426-9ee1-575f61b3dbb5",
+            "56c60f3a-17ba-4c14-972f-2a01c9401114",
+            "841e991b-3941-4c05-aa9c-a8383dddcb62",
+            "84467a21-68c4-493c-9555-39b577abda08",
+            "9c8fbe56-6618-4bb6-8c65-8a8379e84d4d",
+            "a1dece81-5425-4c04-9e45-2f4b25aaf8cd",
+            "e6aba3f2-fe58-4308-99d4-1343b13ad76c",
+            "ec53c0cc-7d46-4c56-9ad0-022f608510c5",
+            "f80b156a-3cff-436b-b65d-7bcd29e25946"
+        ],
+        "sample_types": [
+            "positive",
+            "positive",
+            "positive",
+            "positive",
+            "positive",
+            "positive",
+            "positive",
+            "positive",
+            "positive",
+            "positive",
+            "positive",
+            "positive",
+            "negative",
+            "negative",
+            "negative",
+            "negative",
+            "negative",
+            "negative",
+            "negative",
+            "negative",
+            "negative",
+            "negative",
+            "negative",
+            "negative",
+            "negative",
+            "negative"
+        ],
+        "signature": "b4618df8b5b0a4a77d6144a21baff83864b1f8084341ef779cc920fbf1176b89",
+        "split": {
+            "strategy": "stratified_holdout",
+            "random_state": 42,
+            "configured_train_ratio": 0.8,
+            "configured_validation_ratio": 0.2,
+            "actual_train_ratio": 0.7692307692307693,
+            "actual_validation_ratio": 0.23076923076923078,
+            "training_samples": 20,
+            "training_positive": 9,
+            "training_negative": 11,
+            "validation_samples": 6,
+            "validation_positive": 3,
+            "validation_negative": 3,
+            "training_sample_ids": [
+                "48146d0a-18d4-42cf-b4f3-00df3613a0d3",
+                "e6aba3f2-fe58-4308-99d4-1343b13ad76c",
+                "84467a21-68c4-493c-9555-39b577abda08",
+                "9c8fbe56-6618-4bb6-8c65-8a8379e84d4d",
+                "841e991b-3941-4c05-aa9c-a8383dddcb62",
+                "2feda1e3-0156-436a-a767-59fa87adc432",
+                "53e75657-e0b5-4426-9ee1-575f61b3dbb5",
+                "d701696a-7b7e-4f10-95d8-42d57fa5023a",
+                "f80b156a-3cff-436b-b65d-7bcd29e25946",
+                "ec53c0cc-7d46-4c56-9ad0-022f608510c5",
+                "322ccc9c-fa50-4714-823d-3c13a835e11e",
+                "3cfce45d-429d-466b-9f72-34c7b8363109",
+                "233cb9ec-5524-49aa-9850-7ff96c719a34",
+                "b11fb1f4-19b8-494b-bbc3-78cc05b472da",
+                "65c7c63d-5565-4870-87e5-f59a4e193f0c",
+                "7c7f780d-f9c6-4d47-a687-aef0f6e3dceb",
+                "4a60e130-dd74-44d8-b2f7-9250f610593e",
+                "627222ac-44cd-44ba-96e1-127330e51e92",
+                "6940c499-b260-4bd3-a853-82296852c995",
+                "e53cbdd4-9762-4b3b-93e1-34b373123560"
+            ],
+            "validation_sample_ids": [
+                "fe1a88f6-bc88-40c1-8c83-bcc80fac0a56",
+                "56c60f3a-17ba-4c14-972f-2a01c9401114",
+                "437603d5-aa81-4216-b777-86287b61e79d",
+                "ad55b9bc-66b5-4dae-8222-0719c330791c",
+                "a1dece81-5425-4c04-9e45-2f4b25aaf8cd",
+                "564f4c39-e733-4bb1-b8c9-8033b5cc0035"
+            ]
+        }
+    }
+}

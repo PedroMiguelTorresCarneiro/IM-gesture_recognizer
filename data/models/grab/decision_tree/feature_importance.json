@@ -1,0 +1,10 @@
+{
+    "used_feature_count": 1,
+    "used_features": [
+        {
+            "index": 328,
+            "name": "R0_velocity_18_y_mean",
+            "importance": 1.0
+        }
+    ]
+}

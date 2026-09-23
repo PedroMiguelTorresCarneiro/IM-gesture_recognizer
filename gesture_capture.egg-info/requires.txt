@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+python-multipart
+numpy
+opencv-python
+mediapipe==0.10.21
+av==18.1.0

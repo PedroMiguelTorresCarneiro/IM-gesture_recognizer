@@ -1,0 +1,4 @@
+|--- R0_velocity_18_y_mean <= 0.10
+|   |--- class: 0
+|--- R0_velocity_18_y_mean >  0.10
+|   |--- class: 1

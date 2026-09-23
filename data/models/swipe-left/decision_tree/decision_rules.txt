@@ -1,0 +1,7 @@
+|--- R1_acceleration_5_x_mean <= 0.95
+|   |--- class: 0
+|--- R1_acceleration_5_x_mean >  0.95
+|   |--- R4_velocity_3_y_mean <= 0.20
+|   |   |--- class: 1
+|   |--- R4_velocity_3_y_mean >  0.20
+|   |   |--- class: 0
