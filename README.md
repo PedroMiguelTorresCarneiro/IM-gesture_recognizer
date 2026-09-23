@@ -198,13 +198,13 @@ The current V1 intentionally preserves the original gesture duration and does **
 
 ---
 
-## `feature_extraction/config.py`
+<!-- ## `feature_extraction/config.py`
 
 Contains configuration used by the feature extraction pipeline.
 
 It centralizes parameters and constants required during video processing and feature generation.
 
----
+--- -->
 
 ## `feature_extraction/pipeline.py`
 
@@ -304,11 +304,11 @@ Located in:
 backend/feature_extraction/storage/
 ```
 
-## `storage/reader.py`
+<!-- ## `storage/reader.py`
 
 Contains utilities for loading sample metadata and previously generated feature data.
 
----
+--- -->
 
 ## `storage/writer.py`
 
@@ -370,7 +370,7 @@ Model + Metrics + Rules
 
 ---
 
-## `training/config.py`
+<!-- ## `training/config.py`
 
 Contains configuration used during classifier training.
 
@@ -378,7 +378,7 @@ This includes parameters shared by the dataset, representation, and model traini
 
 The training pipeline uses a fixed `RANDOM_STATE` so that operations such as dataset splitting and model training remain reproducible.
 
----
+--- -->
 
 ## `training/pipeline.py`
 
@@ -531,9 +531,7 @@ This makes the classifier particularly useful during development and analysis of
 
 Random Forest model implementation.
 
-It follows the same training architecture and provides an alternative ensemble-based classifier while keeping the model layer separated from the rest of the pipeline.
-
-The current default training path remains the Decision Tree.
+> TO BE IMPLEMENTED
 
 ---
 
@@ -606,7 +604,7 @@ Stores the validation samples and their predictions, allowing the interface to s
 
 ---
 
-# Frontend
+<!-- # Frontend
 
 The frontend is located in:
 
@@ -653,7 +651,7 @@ Contains the visual layout and styling of the application.
 
 The sample visualization interface displays the original video and the landmark visualization side by side.
 
----
+--- -->
 
 # Data
 
@@ -744,7 +742,7 @@ The imported `sample.json` and `features.json` metadata are updated for the new 
 
 ---
 
-# Training from the API
+<!-- # Training from the API
 
 Training can be triggered through the frontend or directly through the API.
 
@@ -764,7 +762,7 @@ curl \
 
 The training state indicates whether the stored model is still current or whether the dataset has changed since the last training.
 
----
+--- -->
 
 # Current pipeline
 
